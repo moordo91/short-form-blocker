@@ -1,1 +1,13 @@
-﻿
+﻿{
+  "manifest_version": 3,
+  "name": "Short-form Blocker",
+  "version": "0.1.0",
+  "description": "Hide unwanted short-form content from feeds.",
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

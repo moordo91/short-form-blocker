@@ -1,0 +1,1 @@
+﻿console.log("Short-form Blocker loaded");
