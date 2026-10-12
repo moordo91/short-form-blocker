@@ -1,12 +1,22 @@
 ﻿{
   "manifest_version": 3,
-  "name": "Short-form Blocker",
+  "name": "숏폼 차단기",
   "version": "0.1.0",
-  "description": "Hide unwanted short-form content from feeds.",
+  "description": "유튜브에서 원치 않는 숏폼 콘텐츠의 노출을 차단합니다.",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/*"],
-      "js": ["content.js"],
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
       "run_at": "document_idle"
     }
   ]

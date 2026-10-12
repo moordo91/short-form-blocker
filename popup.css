@@ -1,0 +1,66 @@
+﻿body {
+  width: 280px;
+  padding: 16px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.setting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+/* 기존 체크박스 숨기기 */
+.setting input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* 토글 스위치 배경 */
+.slider {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  background-color: #ccc;
+  border-radius: 22px;
+  transition: 0.2s;
+  flex-shrink: 0;
+}
+
+/* 토글 스위치 원 */
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 2px;
+  top: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+/* ON 상태 배경 */
+.setting input:checked + .slider {
+  background-color: #4caf50;
+}
+
+/* ON 상태 원 이동 */
+.setting input:checked + .slider::before {
+  transform: translateX(18px);
+}
+
+/* 키보드 포커스 표시 */
+.setting input:focus-visible + .slider {
+  outline: 2px solid #222;
+  outline-offset: 3px;
+}
