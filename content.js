@@ -101,11 +101,19 @@ function hideShortsSearchFilter() {
 
 // 구독 페이지 메뉴
 function hideSubscriptionShorts() {
+  // 구독 페이지 Shorts 묶음
   const shortsShelves = document.querySelectorAll(
-    "ytd-item-section-renderer:has(ytd-reel-shelf-renderer)",
+    "ytd-item-section-renderer:has(ytd-reel-shelf-renderer)"
   );
 
   setVisibility(shortsShelves, settings.subscription);
+
+  // Shorts 탭
+  const shortsTabs = document.querySelectorAll(
+    'yt-tab-shape[tab-title="Shorts"]'
+  );
+
+  setVisibility(shortsTabs, settings.subscription);
 }
 
 // 모든 차단 기능 실행
